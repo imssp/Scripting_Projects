@@ -29,8 +29,8 @@ aws ec2 describe-instances | jq -r '.Reservations[].Instances[].InstanceId'
 echo "Print list of lamda functions"
 aws lambda list-functions
 
-# List IAM users
+# List IAM users 
 echo "Print list of iam users"
-aws iam list-users
+aws iam list-users | jq -r '.Users[].UserName'
 
-
+#These type of scripts are run on the AWS EC2 instances to get the report of the AWS resources.
